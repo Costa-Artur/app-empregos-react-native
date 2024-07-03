@@ -1,6 +1,6 @@
 import { faBars} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { TouchableOpacity, View, Image, ViewStyle, ImageStyle } from "react-native";
+import { TouchableOpacity, View, Image, ViewStyle, ImageStyle, Pressable } from "react-native";
 
 type HeaderProps = {}
 
@@ -9,13 +9,13 @@ export default function Header(props: HeaderProps) {
 
     return (
         <View style={styles.header}>
-            <TouchableOpacity onPress={() => console.log('User pressed')} style={{alignItems: 'center'}}>
+            <Pressable onPress={() => console.log('User pressed')} style={{alignItems: 'center'}}>
               <Image source={{ uri: userImageUri }} style={styles.userImage} />
-            </TouchableOpacity>
+            </Pressable>
             
-            <TouchableOpacity onPress={() => console.log('Burger menu pressed')} style={{alignItems: 'center'}}>
+            <Pressable onPress={() => console.log('Burger menu pressed')} style={{alignItems: 'center'}}>
                 <FontAwesomeIcon size={35} icon={faBars}></FontAwesomeIcon>
-            </TouchableOpacity>
+            </Pressable>
         </View>
     );
 }
