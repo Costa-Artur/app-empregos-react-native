@@ -1,6 +1,7 @@
 import { faBars} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TouchableOpacity, View, Image, ViewStyle, ImageStyle, Pressable } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type HeaderProps = {}
 
@@ -8,7 +9,7 @@ export default function Header(props: HeaderProps) {
     const userImageUri = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
 
     return (
-        <View style={styles.header}>
+        <SafeAreaView style={styles.header}>
             <Pressable onPress={() => console.log('User pressed')} style={{alignItems: 'center'}}>
               <Image source={{ uri: userImageUri }} style={styles.userImage} />
             </Pressable>
@@ -16,7 +17,7 @@ export default function Header(props: HeaderProps) {
             <Pressable onPress={() => console.log('Burger menu pressed')} style={{alignItems: 'center'}}>
                 <FontAwesomeIcon size={35} icon={faBars}></FontAwesomeIcon>
             </Pressable>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -26,7 +27,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 16,
-        paddingTop: 20,
         height: 100,
         backgroundColor: '#f0f0f0',
         borderBottomWidth: 1,
